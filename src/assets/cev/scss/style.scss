@@ -1,0 +1,26 @@
+@import 'variables';
+@import 'slick';
+@import 'fancybox';
+@import 'slick-theme';
+@import 'global';
+@import 'fonts';
+@import 'preloader';
+@import 'common';
+@import 'header';
+@import 'footer';
+@import 'index';
+@import 'banners';
+@import 'all_pages';
+@import 'structure'; //стили страницы Структура
+@import 'adaptive';
+// стили версии для слабовидящих
+@import 'poor-eyesight/common-viz';
+@import 'poor-eyesight/font-size-normal';
+@import 'poor-eyesight/font-size-large';
+@import 'poor-eyesight/font-size-very-large';
+@import 'poor-eyesight/theme-white';
+@import 'poor-eyesight/theme-black';
+@import 'poor-eyesight/theme-blue';
+@import 'poor-eyesight/all-img';
+
+ 

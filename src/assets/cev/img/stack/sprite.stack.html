@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG stack preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+
+<!--
+
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-administratum-dims { width: 67.3px; height: 67.4px; }
+	.svg-back-arrow-dims { width: 17px; height: 12px; }
+	.svg-black_csv-dims { width: 78px; height: 77px; }
+	.svg-black_doc-dims { width: 78px; height: 77px; }
+	.svg-black_jpg-dims { width: 78px; height: 77px; }
+	.svg-black_pdf-dims { width: 78px; height: 77px; }
+	.svg-black_png-dims { width: 78px; height: 77px; }
+	.svg-black_pptx-dims { width: 78px; height: 77px; }
+	.svg-black_rar-dims { width: 78px; height: 77px; }
+	.svg-black_xls-dims { width: 78px; height: 77px; }
+	.svg-black_zip-dims { width: 78px; height: 77px; }
+	.svg-blue_csv-dims { width: 78px; height: 77px; }
+	.svg-blue_doc-dims { width: 78px; height: 77px; }
+	.svg-blue_jpg-dims { width: 78px; height: 77px; }
+	.svg-blue_pdf-dims { width: 78px; height: 77px; }
+	.svg-blue_png-dims { width: 78px; height: 77px; }
+	.svg-blue_pptx-dims { width: 78px; height: 77px; }
+	.svg-blue_rar-dims { width: 78px; height: 77px; }
+	.svg-blue_xls-dims { width: 78px; height: 77px; }
+	.svg-blue_zip-dims { width: 78px; height: 77px; }
+	.svg-csv-dims { width: 78px; height: 77px; }
+	.svg-decorgear-dims { width: 930px; height: 678px; }
+	.svg-doc-dims { width: 78px; height: 77px; }
+	.svg-eye-dims { width: 53px; height: 28px; }
+	.svg-footer-logo-dims { width: 84px; height: 63px; }
+	.svg-footer-logo_black-dims { width: 99px; height: 74px; }
+	.svg-gears-dims { width: 74px; height: 74px; }
+	.svg-jpg-dims { width: 78px; height: 77px; }
+	.svg-left-arrow-dims { width: 34px; height: 61px; }
+	.svg-logo-dims { width: 99px; height: 74px; }
+	.svg-menudecor-dims { width: 657px; height: 509px; }
+	.svg-pdf-dims { width: 78px; height: 77px; }
+	.svg-png-dims { width: 78px; height: 77px; }
+	.svg-pptx-dims { width: 78px; height: 77px; }
+	.svg-rar-dims { width: 78px; height: 77px; }
+	.svg-right-arrow-dims { width: 33px; height: 61px; }
+	.svg-white_csv-dims { width: 78px; height: 77px; }
+	.svg-white_doc-dims { width: 78px; height: 77px; }
+	.svg-white_jpg-dims { width: 78px; height: 77px; }
+	.svg-white_pdf-dims { width: 78px; height: 77px; }
+	.svg-white_png-dims { width: 78px; height: 77px; }
+	.svg-white_pptx-dims { width: 78px; height: 77px; }
+	.svg-white_rar-dims { width: 78px; height: 77px; }
+	.svg-white_xls-dims { width: 78px; height: 77px; }
+	.svg-white_zip-dims { width: 78px; height: 77px; }
+	.svg-xls-dims { width: 78px; height: 77px; }
+	.svg-zip-dims { width: 78px; height: 77px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG stack preview</h1>
+			<p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+
+-->
+
+			<ul>
+
+				<li title="administratum">
+					<div class="icon-box">
+
+						<!-- administratum -->
+						<img src="../icon-sprite.svg#administratum" class="svg-administratum-dims" alt="administratum"/>
+
+					</div>
+					<h2>administratum</h2>
+				</li>
+				<li title="back-arrow">
+					<div class="icon-box">
+
+						<!-- back-arrow -->
+						<img src="../icon-sprite.svg#back-arrow" class="svg-back-arrow-dims" alt="back-arrow"/>
+
+					</div>
+					<h2>back-arrow</h2>
+				</li>
+				<li title="black_csv">
+					<div class="icon-box">
+
+						<!-- black_csv -->
+						<img src="../icon-sprite.svg#black_csv" class="svg-black_csv-dims" alt="black_csv"/>
+
+					</div>
+					<h2>black_csv</h2>
+				</li>
+				<li title="black_doc">
+					<div class="icon-box">
+
+						<!-- black_doc -->
+						<img src="../icon-sprite.svg#black_doc" class="svg-black_doc-dims" alt="black_doc"/>
+
+					</div>
+					<h2>black_doc</h2>
+				</li>
+				<li title="black_jpg">
+					<div class="icon-box">
+
+						<!-- black_jpg -->
+						<img src="../icon-sprite.svg#black_jpg" class="svg-black_jpg-dims" alt="black_jpg"/>
+
+					</div>
+					<h2>black_jpg</h2>
+				</li>
+				<li title="black_pdf">
+					<div class="icon-box">
+
+						<!-- black_pdf -->
+						<img src="../icon-sprite.svg#black_pdf" class="svg-black_pdf-dims" alt="black_pdf"/>
+
+					</div>
+					<h2>black_pdf</h2>
+				</li>
+				<li title="black_png">
+					<div class="icon-box">
+
+						<!-- black_png -->
+						<img src="../icon-sprite.svg#black_png" class="svg-black_png-dims" alt="black_png"/>
+
+					</div>
+					<h2>black_png</h2>
+				</li>
+				<li title="black_pptx">
+					<div class="icon-box">
+
+						<!-- black_pptx -->
+						<img src="../icon-sprite.svg#black_pptx" class="svg-black_pptx-dims" alt="black_pptx"/>
+
+					</div>
+					<h2>black_pptx</h2>
+				</li>
+				<li title="black_rar">
+					<div class="icon-box">
+
+						<!-- black_rar -->
+						<img src="../icon-sprite.svg#black_rar" class="svg-black_rar-dims" alt="black_rar"/>
+
+					</div>
+					<h2>black_rar</h2>
+				</li>
+				<li title="black_xls">
+					<div class="icon-box">
+
+						<!-- black_xls -->
+						<img src="../icon-sprite.svg#black_xls" class="svg-black_xls-dims" alt="black_xls"/>
+
+					</div>
+					<h2>black_xls</h2>
+				</li>
+				<li title="black_zip">
+					<div class="icon-box">
+
+						<!-- black_zip -->
+						<img src="../icon-sprite.svg#black_zip" class="svg-black_zip-dims" alt="black_zip"/>
+
+					</div>
+					<h2>black_zip</h2>
+				</li>
+				<li title="blue_csv">
+					<div class="icon-box">
+
+						<!-- blue_csv -->
+						<img src="../icon-sprite.svg#blue_csv" class="svg-blue_csv-dims" alt="blue_csv"/>
+
+					</div>
+					<h2>blue_csv</h2>
+				</li>
+				<li title="blue_doc">
+					<div class="icon-box">
+
+						<!-- blue_doc -->
+						<img src="../icon-sprite.svg#blue_doc" class="svg-blue_doc-dims" alt="blue_doc"/>
+
+					</div>
+					<h2>blue_doc</h2>
+				</li>
+				<li title="blue_jpg">
+					<div class="icon-box">
+
+						<!-- blue_jpg -->
+						<img src="../icon-sprite.svg#blue_jpg" class="svg-blue_jpg-dims" alt="blue_jpg"/>
+
+					</div>
+					<h2>blue_jpg</h2>
+				</li>
+				<li title="blue_pdf">
+					<div class="icon-box">
+
+						<!-- blue_pdf -->
+						<img src="../icon-sprite.svg#blue_pdf" class="svg-blue_pdf-dims" alt="blue_pdf"/>
+
+					</div>
+					<h2>blue_pdf</h2>
+				</li>
+				<li title="blue_png">
+					<div class="icon-box">
+
+						<!-- blue_png -->
+						<img src="../icon-sprite.svg#blue_png" class="svg-blue_png-dims" alt="blue_png"/>
+
+					</div>
+					<h2>blue_png</h2>
+				</li>
+				<li title="blue_pptx">
+					<div class="icon-box">
+
+						<!-- blue_pptx -->
+						<img src="../icon-sprite.svg#blue_pptx" class="svg-blue_pptx-dims" alt="blue_pptx"/>
+
+					</div>
+					<h2>blue_pptx</h2>
+				</li>
+				<li title="blue_rar">
+					<div class="icon-box">
+
+						<!-- blue_rar -->
+						<img src="../icon-sprite.svg#blue_rar" class="svg-blue_rar-dims" alt="blue_rar"/>
+
+					</div>
+					<h2>blue_rar</h2>
+				</li>
+				<li title="blue_xls">
+					<div class="icon-box">
+
+						<!-- blue_xls -->
+						<img src="../icon-sprite.svg#blue_xls" class="svg-blue_xls-dims" alt="blue_xls"/>
+
+					</div>
+					<h2>blue_xls</h2>
+				</li>
+				<li title="blue_zip">
+					<div class="icon-box">
+
+						<!-- blue_zip -->
+						<img src="../icon-sprite.svg#blue_zip" class="svg-blue_zip-dims" alt="blue_zip"/>
+
+					</div>
+					<h2>blue_zip</h2>
+				</li>
+				<li title="csv">
+					<div class="icon-box">
+
+						<!-- csv -->
+						<img src="../icon-sprite.svg#csv" class="svg-csv-dims" alt="csv"/>
+
+					</div>
+					<h2>csv</h2>
+				</li>
+				<li title="decorgear">
+					<div class="icon-box">
+
+						<!-- decorgear -->
+						<img src="../icon-sprite.svg#decorgear" class="svg-decorgear-dims" alt="decorgear"/>
+
+					</div>
+					<h2>decorgear</h2>
+				</li>
+				<li title="doc">
+					<div class="icon-box">
+
+						<!-- doc -->
+						<img src="../icon-sprite.svg#doc" class="svg-doc-dims" alt="doc"/>
+
+					</div>
+					<h2>doc</h2>
+				</li>
+				<li title="eye">
+					<div class="icon-box">
+
+						<!-- eye -->
+						<img src="../icon-sprite.svg#eye" class="svg-eye-dims" alt="eye"/>
+
+					</div>
+					<h2>eye</h2>
+				</li>
+				<li title="footer-logo">
+					<div class="icon-box">
+
+						<!-- footer-logo -->
+						<img src="../icon-sprite.svg#footer-logo" class="svg-footer-logo-dims" alt="footer-logo"/>
+
+					</div>
+					<h2>footer-logo</h2>
+				</li>
+				<li title="footer-logo_black">
+					<div class="icon-box">
+
+						<!-- footer-logo_black -->
+						<img src="../icon-sprite.svg#footer-logo_black" class="svg-footer-logo_black-dims" alt="footer-logo_black"/>
+
+					</div>
+					<h2>footer-logo_black</h2>
+				</li>
+				<li title="gears">
+					<div class="icon-box">
+
+						<!-- gears -->
+						<img src="../icon-sprite.svg#gears" class="svg-gears-dims" alt="gears"/>
+
+					</div>
+					<h2>gears</h2>
+				</li>
+				<li title="jpg">
+					<div class="icon-box">
+
+						<!-- jpg -->
+						<img src="../icon-sprite.svg#jpg" class="svg-jpg-dims" alt="jpg"/>
+
+					</div>
+					<h2>jpg</h2>
+				</li>
+				<li title="left-arrow">
+					<div class="icon-box">
+
+						<!-- left-arrow -->
+						<img src="../icon-sprite.svg#left-arrow" class="svg-left-arrow-dims" alt="left-arrow"/>
+
+					</div>
+					<h2>left-arrow</h2>
+				</li>
+				<li title="logo">
+					<div class="icon-box">
+
+						<!-- logo -->
+						<img src="../icon-sprite.svg#logo" class="svg-logo-dims" alt="logo"/>
+
+					</div>
+					<h2>logo</h2>
+				</li>
+				<li title="menudecor">
+					<div class="icon-box">
+
+						<!-- menudecor -->
+						<img src="../icon-sprite.svg#menudecor" class="svg-menudecor-dims" alt="menudecor"/>
+
+					</div>
+					<h2>menudecor</h2>
+				</li>
+				<li title="pdf">
+					<div class="icon-box">
+
+						<!-- pdf -->
+						<img src="../icon-sprite.svg#pdf" class="svg-pdf-dims" alt="pdf"/>
+
+					</div>
+					<h2>pdf</h2>
+				</li>
+				<li title="png">
+					<div class="icon-box">
+
+						<!-- png -->
+						<img src="../icon-sprite.svg#png" class="svg-png-dims" alt="png"/>
+
+					</div>
+					<h2>png</h2>
+				</li>
+				<li title="pptx">
+					<div class="icon-box">
+
+						<!-- pptx -->
+						<img src="../icon-sprite.svg#pptx" class="svg-pptx-dims" alt="pptx"/>
+
+					</div>
+					<h2>pptx</h2>
+				</li>
+				<li title="rar">
+					<div class="icon-box">
+
+						<!-- rar -->
+						<img src="../icon-sprite.svg#rar" class="svg-rar-dims" alt="rar"/>
+
+					</div>
+					<h2>rar</h2>
+				</li>
+				<li title="right-arrow">
+					<div class="icon-box">
+
+						<!-- right-arrow -->
+						<img src="../icon-sprite.svg#right-arrow" class="svg-right-arrow-dims" alt="right-arrow"/>
+
+					</div>
+					<h2>right-arrow</h2>
+				</li>
+				<li title="white_csv">
+					<div class="icon-box">
+
+						<!-- white_csv -->
+						<img src="../icon-sprite.svg#white_csv" class="svg-white_csv-dims" alt="white_csv"/>
+
+					</div>
+					<h2>white_csv</h2>
+				</li>
+				<li title="white_doc">
+					<div class="icon-box">
+
+						<!-- white_doc -->
+						<img src="../icon-sprite.svg#white_doc" class="svg-white_doc-dims" alt="white_doc"/>
+
+					</div>
+					<h2>white_doc</h2>
+				</li>
+				<li title="white_jpg">
+					<div class="icon-box">
+
+						<!-- white_jpg -->
+						<img src="../icon-sprite.svg#white_jpg" class="svg-white_jpg-dims" alt="white_jpg"/>
+
+					</div>
+					<h2>white_jpg</h2>
+				</li>
+				<li title="white_pdf">
+					<div class="icon-box">
+
+						<!-- white_pdf -->
+						<img src="../icon-sprite.svg#white_pdf" class="svg-white_pdf-dims" alt="white_pdf"/>
+
+					</div>
+					<h2>white_pdf</h2>
+				</li>
+				<li title="white_png">
+					<div class="icon-box">
+
+						<!-- white_png -->
+						<img src="../icon-sprite.svg#white_png" class="svg-white_png-dims" alt="white_png"/>
+
+					</div>
+					<h2>white_png</h2>
+				</li>
+				<li title="white_pptx">
+					<div class="icon-box">
+
+						<!-- white_pptx -->
+						<img src="../icon-sprite.svg#white_pptx" class="svg-white_pptx-dims" alt="white_pptx"/>
+
+					</div>
+					<h2>white_pptx</h2>
+				</li>
+				<li title="white_rar">
+					<div class="icon-box">
+
+						<!-- white_rar -->
+						<img src="../icon-sprite.svg#white_rar" class="svg-white_rar-dims" alt="white_rar"/>
+
+					</div>
+					<h2>white_rar</h2>
+				</li>
+				<li title="white_xls">
+					<div class="icon-box">
+
+						<!-- white_xls -->
+						<img src="../icon-sprite.svg#white_xls" class="svg-white_xls-dims" alt="white_xls"/>
+
+					</div>
+					<h2>white_xls</h2>
+				</li>
+				<li title="white_zip">
+					<div class="icon-box">
+
+						<!-- white_zip -->
+						<img src="../icon-sprite.svg#white_zip" class="svg-white_zip-dims" alt="white_zip"/>
+
+					</div>
+					<h2>white_zip</h2>
+				</li>
+				<li title="xls">
+					<div class="icon-box">
+
+						<!-- xls -->
+						<img src="../icon-sprite.svg#xls" class="svg-xls-dims" alt="xls"/>
+
+					</div>
+					<h2>xls</h2>
+				</li>
+				<li title="zip">
+					<div class="icon-box">
+
+						<!-- zip -->
+						<img src="../icon-sprite.svg#zip" class="svg-zip-dims" alt="zip"/>
+
+					</div>
+					<h2>zip</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Tue, 22 Feb 2022 11:53:40 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

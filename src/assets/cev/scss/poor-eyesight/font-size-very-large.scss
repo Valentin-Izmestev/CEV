@@ -1,0 +1,30 @@
+.font-size_very-large{
+    .vizpanel {
+        .vizpanel__block {
+            .fs_very_larg.vizpanel__block__btn-arrow::after{
+                visibility: visible;
+            }
+        }
+    }
+    .main-menu {
+        ul{
+            max-width: 100%;
+            li{
+                margin: 0 5px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    #header .logo {
+        margin-right: 2%;
+    }
+    #footer .footer__top .footer-menu { 
+        max-width: 800px; 
+    } 
+    @media screen and (max-width: 980px){
+        .main-menu { 
+            padding: 70px 1rem 1rem 1rem;
+        }
+    }
+    
+}

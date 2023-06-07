@@ -1,0 +1,50 @@
+.theme_blue{
+    .vizpanel .vizpanel__block .blue-theme.vizpanel__block__btn-arrow::after{
+        visibility: visible;
+    }
+    .pdf, .PDF{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_pdf);
+        }
+    }
+    .doc, .DOC, .docx, .DOCX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_doc);
+        }
+    }
+    .jpg, .JPG{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_jpg);
+        }
+    }
+    .png, .PNG{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_png);
+        }
+    }
+    .pptx, .PPTX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_pptx);
+        }
+    }
+    .xls, .XLS, .xlsx, .XLSX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_xls);
+        }
+    }
+    .csv, .CSV{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_csv);
+        }
+    }
+    .rar, .RAR{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_rar);
+        }
+    }
+    .zip, .ZIP{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#blue_zip);
+        }
+    }
+}

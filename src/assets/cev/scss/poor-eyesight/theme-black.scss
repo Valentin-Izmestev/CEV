@@ -1,0 +1,76 @@
+.theme_black{  
+    .vizpanel {
+        .vizpanel__block {
+            .vizpanel__block__btn{
+                
+                &.white-theme {  
+                }
+                &.black-theme {  
+                    border: 2px solid #ffffff;
+                    &::after{
+                        visibility: visible;
+                    }
+                } 
+            }
+            // .vizpanel .vizpanel__block .vizpanel__block__btn.vizpanel__block__btn-arrow::after
+            .vizpanel__block__btn{
+                &.switch-img,
+                &.regular-version{
+                    color: #000000;
+                }
+            }
+        }
+    }
+    .pdf, .PDF{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_pdf);
+        }
+    }
+    .doc, .DOC, .docx, .DOCX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_doc);
+        }
+    }
+    .jpg, .JPG{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_jpg);
+        }
+    }
+    .png, .PNG{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_png);
+        }
+    }
+    .pptx, .PPTX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_pptx);
+        }
+    }
+    .xls, .XLS, .xlsx, .XLSX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_xls);
+        }
+    }
+    .csv, .CSV{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_csv);
+        }
+    }
+    .rar, .RAR{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_rar);
+        }
+    }
+    .zip, .ZIP{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#white_zip);
+        }
+    }
+    #footer{
+        .logo{
+            img{
+                background-image: url(../img/icon-sprite.svg#footer-logo_white); 
+            }
+        }
+    }
+}

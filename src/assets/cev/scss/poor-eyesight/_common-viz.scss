@@ -1,0 +1,184 @@
+.vizpanel {
+    padding-top: 10px;
+    display: none;
+    border-bottom: 1px solid var(--text-color);
+    .inner {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+
+    .vizpanel__block {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 10px;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .vizpanel__block__label {
+            margin-right: 3px;
+        }
+
+        .vizpanel__block__btn {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            height: 35px;
+            min-width: 35px;
+            padding: 0 3px;
+            text-align: center;
+            border-radius: 5px;
+            border: 2px solid var(--text-color);
+            background-color: var(--bg-color); 
+            margin: 0 2px;
+            font-size: 1.3rem;
+            font-size: 17px;
+            &.vizpanel__block__btn__settings{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                img{
+                    width: 35px;
+                }
+            }
+            .font-vizpanel__block__btn__font {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+            }
+
+            &:hover {}
+
+            &:active {}
+
+            &:focus {}
+
+            &.vizpanel__block__btn-arrow::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 101%;
+                border-top: 8px solid var(--text-color);
+                border-right: 5px solid transparent;
+                border-left: 5px solid transparent;
+                visibility: hidden;
+            }
+
+            &.fs_large {
+                font-size: 25px;
+            }
+
+            &.fs_very_larg {
+                font-size: 34px;
+            }
+            &.switch-img,
+            &.regular-version,
+            &.vizpanel__block__btn__settings{
+                background-color: #fffb00;
+            }
+            &.white-theme {
+                background-color: #ffffff;
+                color: #000000;
+            }
+
+            &.black-theme {
+                background-color: #000000;
+                color: #ffffff;
+                border: 2px solid #000000;
+            }
+
+            &.blue-theme {
+                background-color: #9dd1ff;
+                color: #063462;
+            }
+
+            &.switch-img {
+
+                .switch-img_on,
+                .switch-img_off {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.common-viz {
+    
+    #header{
+        border-bottom: 1px solid var(--text-color);
+        .close_menu{
+            &.active{
+                display: block;
+            } 
+        }
+        .burger{
+            z-index: 1;
+        }
+    }  
+    .main-menu ul li a:active, .main-menu ul li a:focus, .main-menu ul li a:hover {
+        text-decoration: underline;
+        color: var(--active-color);
+    }
+    footer .footer__top .footer-menu li a:active, #footer .footer__top .footer-menu li a:focus, #footer .footer__top .footer-menu li a:hover,
+    #footer .footer__bottom .priv-pol:active, #footer .footer__bottom .priv-pol:focus, #footer .footer__bottom .priv-pol:hover {
+        text-decoration: underline;
+        color: var(--alt-bg-color);
+    } 
+    .vizpanel,
+    .resourse__grid {
+        display: block;
+    }
+    .resource__item{
+        box-shadow: 0 0 0 0 transparent;
+        border: 1px solid var(--text-color);
+    }
+
+    .poor_eyesight,
+    .resource__sl  {
+        display: none;
+    }
+
+    img { 
+        filter: grayscale(100%); 
+    }
+
+    #main .decorgear-top,
+    #main .decorgear-bottom {
+        display: none;
+    }
+
+    .slogan-sl__section {
+        background-color: var(--text-color); 
+        border-bottom: 1px solid var(--text-color);
+        .particles-js-canvas-el {
+            visibility: hidden;
+        }
+    }
+
+    .is-item {
+        box-shadow: 0 0 0 0 transparent;
+        border: 1px solid var(--text-color);
+    }
+    .header{
+        border-bottom: 1px solid var(--text-color);
+    }
+    .structure__box .row .structure__wr .structure__item{
+        border: 1px solid var(--text-color);
+        box-shadow: 0 0 0 0 tranparent;
+    }
+
+}
+@media screen and (max-width: 980px){
+    .common-viz{
+        .main-menu{
+            background-image: none;
+        }
+    }
+}
+ 

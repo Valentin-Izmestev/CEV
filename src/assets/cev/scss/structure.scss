@@ -1,0 +1,87 @@
+.structure__box{
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: -1.66rem;
+        .structure__wr{ 
+            width: 50%;
+            padding-right: 1.66rem;
+            margin-bottom: 1.66rem;
+            box-sizing: border-box;
+            &:first-child{
+                width: 100%;
+            }
+            .structure__item{ 
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                max-width: 568px;
+                margin: 0 auto;
+                background-color: var(--alt-bg-color);
+                box-shadow: $singl-shadow;
+                box-sizing: border-box;
+                padding: 0.83rem;
+                border-radius: 10px;
+                border: 1px solid var(--alt-bg-color);
+                text-align: center;
+                transition: all 200ms ease; 
+                &:hover{
+                    &::after{
+                        display: none;
+                    }
+                }              
+                &:hover, &:focus, &:active{
+                    // transform:scale(1.03);
+                    border: 1px solid var(--active-color);
+                    box-shadow: 0 0 0 0 var(--bg-color);
+                    text-decoration: none;
+                     
+                    .structure__item__cuption{
+                        color: var(--active-color);
+                        
+                    }
+                }
+                .structure__item__icon-wr{
+                    display: block; 
+                    margin-bottom: 0.83rem;
+                    img{
+                        transition: all 200ms ease; 
+                        display: block;
+                        margin: 0 auto;
+                        width: auto;
+                        max-height: 70px;
+                    }
+                }
+                .structure__item__cuption{ 
+                    display: flex;
+                    flex-grow: 1; 
+                    align-items: center;
+                    justify-content: center; 
+                    font-size: 1.11rem;
+                    line-height: 1.1;
+                    color: var(--primary-color);
+                    transition: all 200ms ease;
+                    
+                }
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 600px){
+    .structure__box{
+        .row{ 
+            margin-right: 0;
+            .structure__wr{ 
+                width: 100%;
+                padding-right: 0; 
+            }
+    
+        }
+    
+    }
+}

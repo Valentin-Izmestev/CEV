@@ -1,0 +1,54 @@
+.theme_white{
+    .theme_white .vizpanel .vizpanel__block .vizpanel__block__btn.white-theme {
+        border: 2px solid #fff;
+      }
+
+    .vizpanel .vizpanel__block .white-theme.vizpanel__block__btn-arrow::after{
+        visibility: visible;
+    }
+    .pdf, .PDF{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_pdf);
+        }
+    }
+    .doc, .DOC, .docx, .DOCX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_doc);
+        }
+    }
+    .jpg, .JPG{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_jpg);
+        }
+    }
+    .png, .PNG{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_png);
+        }
+    }
+    .pptx, .PPTX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_pptx);
+        }
+    }
+    .xls, .XLS, .xlsx, .XLSX{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_xls);
+        }
+    }
+    .csv, .CSV{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_csv);
+        }
+    }
+    .rar, .RAR{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_rar);
+        }
+    }
+    .zip, .ZIP{
+        &::before{
+            background-image: url(../img/icon-sprite.svg#black_zip);
+        }
+    }
+}

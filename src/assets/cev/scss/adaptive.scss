@@ -1,0 +1,103 @@
+@media screen and (max-width: 900px){
+    :root{
+        font-size: 16px; 
+    } 
+}
+@media screen and (max-width: 850px){
+    .news-page{
+        flex-direction: column;
+        .news-page__left-col{
+            margin-bottom: 5rem;
+        } 
+        .news-page__right-col {
+            max-width: 100%;
+            min-width: auto;
+            width: 100%;
+            margin-left: 0;
+            
+            .row{
+                display: flex;
+                margin-right: -20px;
+                .new__wr{
+                    box-sizing: border-box;
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+    .workers__box{
+        .row .worker{
+            width: 50%;
+        }
+    }
+    .contacts__box{
+        flex-direction: column;
+        .contacts__left-col{
+            width: 100%;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        .contacts__right-col{
+            width: 100%;
+            #map{
+                img{
+                    max-height: 500px;
+                    min-height: 350px;
+                }
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 700px){
+    .essence-box {   
+        .right-col{   
+            float: none; 
+            width: 100%;
+            margin-left: 0; 
+            margin-bottom: 2.2rem;
+            padding: 0 2rem;
+            box-sizing: border-box;
+            img{
+                max-width: 375px;
+                min-width: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+    .float-box .num { 
+        font-size: 10.33rem;
+        line-height: 1;
+    }
+ }
+@media screen and (max-width: 630px){
+    .workers__box{
+        .row .worker{
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .content .vacancy{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 500px){
+    h1, .h1{
+        font-size: 1.9rem;
+    }
+    h2, .h2{
+        font-size: 1.6rem;
+    }
+    .pagination{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 450px){
+    .news-page .news-page__right-col{
+        display: none;
+    }
+    .news-page .news-page__left-col {
+        margin-bottom: 0; 
+    }
+}

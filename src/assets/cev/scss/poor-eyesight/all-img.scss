@@ -1,0 +1,31 @@
+
+.all-img_on{ 
+    .vizpanel .vizpanel__block .vizpanel__block__btn{
+        &.switch-img_off{
+            display: block;
+        }
+        &.switch-img_on{
+            display: none;
+        }
+    }
+}
+.all-img_off{ 
+    .vizpanel .vizpanel__block .vizpanel__block__btn{
+        &.switch-img_off{
+            display: none;
+        }
+        &.switch-img_on{
+            display: block;
+        }
+    }
+    img{
+        display: none !important;
+    } 
+    .logo img{
+        display: block !important;
+    }
+    .vizpanel .vizpanel__block .vizpanel__block__btn.vizpanel__block__btn__settings img{
+        display: block !important;
+    }
+
+}
